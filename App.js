@@ -27,38 +27,26 @@ export default function App() {
             horizontal={true} 
             // showsHorizontalScrollIndicator={false}
           >
-            <Logo 
-              image={require('./assets/hers2.jpg')}
-              text="Under Wraps"
-            />
-            <Logo 
-              image={require('./assets/logo-figma.png')}
-              text="Harvey"
-            />
+            {logos.map((logo, index) => (
+              <Logo
+                key={index}
+                image={logo.image}
+                text={logo.text}
+              />
+            ))}
           </ScrollView>
           <Subtitle>Continue Listening</Subtitle>
           <ScrollView horizontal={true} style={{ paddingBottom: 30 }} showsHorizontalScrollIndicator={false}>
-            <Card 
-              title="Cool With You" 
-              image={require('./assets/hers.jpg')}
-              caption="Cool With You"
-              logo={require('./assets/circular-play-button.png')}
-              subtitle="Her's"
-            />
-            <Card 
-              title="Styled Components" 
-              image={require('./assets/background2.jpg')}
-              caption="React Native"
-              logo={require('./assets/logo-react.png')}
-              subtitle="5 of 12 sections"
-            />
-            <Card 
-              title="Styled Components" 
-              image={require('./assets/background1.jpg')}
-              caption="React Native"
-              logo={require('./assets/logo-react.png')}
-              subtitle="5 of 12 sections"
-            />
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                image={card.image}
+                caption={card.caption}
+                logo={card.logo}
+                subtitle={card.subtitle}
+              />
+            ))}
           </ScrollView>
         </ScrollView>
       </SafeAreaView>
@@ -111,27 +99,61 @@ const TitleBar = styled.View`
 
 const logos = [
   {
-    image: require('./assets/logo-framerx.png'),
-    text: "Framer X"
+    image: require('./assets/shakey3.jpg'),
+    text: "Shakey Graves"
   },
   {
-    image: require('./assets/logo-figma.png'),
-    text: "Figma"
+    image: require('./assets/bk2.jpg'),
+    text: "The Black Keys"
   },
   {
-    image: require('./assets/logo-studio.png'),
-    text: "Studio"
+    image: require('./assets/hers3.jpg'),
+    text: "Her's"
   },
   {
-    image: require('./assets/logo-react.png'),
-    text: "React"
+    image: require('./assets/am2.jpg'),
+    text: "Arctic Monkeys"
   },
   {
-    image: require('./assets/logo-swift.png'),
-    text: "Swift"
+    image: require('./assets/strokes3.jpg'),
+    text: "The Strokes"
+  }
+]
+
+const cards = [
+  {
+    title: "Cool With You",
+    image: require('./assets/hers2.jpg'),
+    subtitle: "Song's of Her's",
+    caption: "Her's",
+    logo: require('./assets/hers6.jpg')
   },
   {
-    image: require('./assets/logo-sketch.png'),
-    text: "Sketch"
+    title: "Science Fiction",
+    image: require('./assets/am2.jpg'),
+    subtitle: "TBH&C",
+    caption: "Arctic Monkeys",
+    logo: require('./assets/am5.jpg')
+  },
+  {
+    title: "Cops and Robbers",
+    image: require('./assets/shakey3.jpg'),
+    subtitle: "Can't Wake Up",
+    caption: "Shakey Graves",
+    logo: require('./assets/shakey4.jpg')
+  },
+  {
+    title: "Last Exit",
+    image: require('./assets/strokes1.jpg'),
+    subtitle: "First Impressions of Earth",
+    caption: "The Strokes",
+    logo: require('./assets/strokes3.jpg')
+  },
+  {
+    title: "Everlasting Light",
+    image: require('./assets/bk1.jpg'),
+    subtitle: "Brothers",
+    caption: "The Black Keys",
+    logo: require('./assets/bk5.jpg')
   }
 ]
