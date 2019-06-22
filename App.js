@@ -25,7 +25,7 @@ export default function App() {
           <ScrollView 
             style={{ flexDirection: "row", padding: 20, paddingLeft: 12, paddingTop: 30 }} 
             horizontal={true} 
-            // showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
           >
             {logos.map((logo, index) => (
               <Logo
